@@ -6,15 +6,13 @@ import { ReactComponent as Close } from '../../../assets/svgs/close.svg';
 import { gsap } from "gsap/dist/gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
-// gsap.core.globals("ScrollTrigger", ScrollTrigger);
+
 const Header = ({index}) => {
     let navigate = useNavigate();
 
     const fadeEffectsTimeline = useMemo(() => gsap.timeline(), []);
     const windowWidth = window.innerWidth;
     const headerRef = useRef();
-
-    console.log(windowWidth)
 
     useEffect(() =>{
         if(windowWidth >= 1280){
@@ -23,12 +21,12 @@ const Header = ({index}) => {
                 {
                 scrollTrigger: 
                     {
-                        trigger: headerRef.current, 
-                        start: "top top",
-                        endTrigger:"html",
+                        trigger: "#header-trigger", 
+                        start: "top+=10 top",
+                        endTrigger:"footer",
                         end:"bottom top",
-                        // markers: true,
-                        toggleClass: 'menu-appear'
+                        markers: true,
+                        toggleClass: {targets: headerRef.current, className: "menu-appear"}
                     },
                 }
             )

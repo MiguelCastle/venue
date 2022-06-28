@@ -3,6 +3,7 @@ import Header from '../../common/header/Header';
 import { useNavigate } from "react-router-dom";
 import Footer from '../../common/footer/Footer';
 import ContactInfo from '../../common/contact-info/ContactInfo';
+
 const EVENT_PRICES = {
     "birthday-parties": 400,
     "corporate-meeting": 600,
@@ -48,7 +49,7 @@ const BudgetCalculator = () =>{
         foodSelected ? new_total+= FOOD_PRICES[foodSelected] : new_total+= 0
         // adding additional services
         for(const [value] of Object.entries(checkedServices)){
-            new_total += value
+            new_total += SERVICES_PRICES[value]
         }
         setTotalPrice(new_total)
     }, [eventSelected, checkedServices, numberOfPeople, foodSelected])
@@ -69,8 +70,6 @@ const BudgetCalculator = () =>{
         } else {
             newCheckedServices[service] = SERVICES_PRICES[service]
         }
-        console.log('uodating checked evices')
-        console.log(newCheckedServices)
         setCheckedServices({...newCheckedServices})
     }
 
