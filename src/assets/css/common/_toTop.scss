@@ -1,0 +1,27 @@
+#totop-btn{
+    position: fixed;
+    z-index: 998;
+    bottom: 5vh;
+    right: 10vw;
+    color: #fff;
+    padding: 1%;
+    background: rgba(0, 0, 0, 0.301);
+    border-radius: 50%;
+    width: 10vw;
+    height: 10vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    @media screen and (min-width: 768px){
+        width: 5vw;
+        height: 5vw;
+        right: 5vw;
+    }
+    @media only screen and (min-width: 992px) {
+        width: 3vw;
+        height: 3vw;
+        right: 5vw;
+        padding: .5%;
+    }
+}

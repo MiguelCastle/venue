@@ -1,0 +1,48 @@
+//$lg-title-text: 2.625rem; // 42px
+$md-title-text: 2rem; // 32px
+$md-title-text-2: 1.75rem; // 28px
+$sm-title-text: 0.875rem;
+$md-text-2: 1.125rem; // 18 rem
+$md-text: 0.9375rem; // 16px 
+$sm-text: 0.875rem; // 14px
+$x-sm-text: 0.75rem; // 12px
+$xx-sm-text: 0.5rem;
+// line-heights
+$lg-line-height: 4rem;
+
+// NEW //
+//colors
+$white: #ffff;
+$main-blue: #96C7C4;
+$light-blue: #e7fffd;
+$dark-blue: #518a87;
+$main-pink: #C79699;
+$black-text: #141414;
+$gray-text: #575757;
+/********** FONT FAMILY **********/
+@font-face {
+    font-family: "AnticDidone";
+    src: local("AnticDidone"),
+      url("/src/assets/fonts/Antic_Didone/AnticDidone-Regular.ttf") format("truetype");
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "Karla";
+    src: local("Karla"),
+      url("/src/assets/fonts/Karla/Karla-VariableFont_wght.ttf") format("truetype");
+    font-weight: normal;
+}
+
+/***** HEADER FONT *****/
+$lg-header-font: AnticDidone;
+$md-header-font: AnticDidone;
+
+/***** HEADERS *****/
+$lg-header: 2.625rem; // 42px
+$lg-header-weight: 500;
+
+$md-header: 1.75rem; // 28px
+$md-header-weight: 500;
+
+$skinny-weight: 400;

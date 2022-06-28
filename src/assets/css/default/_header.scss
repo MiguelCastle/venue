@@ -1,0 +1,131 @@
+header{
+    position: relative;
+    display: flex;
+    //flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    background-color: $white;
+    z-index: 1;
+    button{
+        position: absolute;
+        height: 30%;
+        width: 15%;
+        right: 10px;
+        bottom: 10px;
+        background-color: transparent;
+        border: none;
+    }
+    #menu-nav{
+        position:absolute;
+        background-color: $white;
+        width: 100%;
+        top: 100%;
+        padding: 6%;
+        list-style: none;
+        flex-direction: column;
+        gap: 4vh;
+        z-index: 10;
+        a{
+            color: $black-text;
+            text-decoration: none;
+        }
+        .active-menu-option{
+            color: $gray-text;
+            text-decoration: underline;
+        }
+    }
+}
+.active-menu{
+    display: flex;
+}
+.inactive-menu{
+    display: none;
+}
+@media screen and (min-width: 768px) {
+    header{
+        display: grid;
+        grid-template-columns: 80% 20%;
+        grid-template-rows: 6vh;
+        padding: .5% 0;
+        svg{
+            height: 100% !important;
+        }
+        button{
+            position: relative;
+            height: 100%;
+            width: 25%;
+            height: 50%;
+            margin-left: 60%;
+            right: initial;
+            bottom: initial;
+        }
+    }
+}
+@media screen and (min-width: 1024px) {
+    header{
+        button{
+            height: 100%;
+        }
+    }
+}
+@media screen and (min-width: 1280px){
+    header{ 
+        position: fixed;
+        z-index: 10;
+        width: 100%;
+        background-color: transparent;
+        grid-template-columns: 40% 50% 10%;
+        transition: all .25s ease-in;
+        button{
+            svg{
+                color: $white;
+                path{
+                    fill: $white;
+                    stroke: $white;
+                }
+            }
+        }
+        #menu-nav{
+            position: relative;
+            flex-direction: row;
+            align-items: center;
+            justify-content: right;
+            top: 0;
+            padding: 0;
+            height: 100%;
+            width: initial;
+            background: transparent;
+            a{
+                color: $white;
+            }
+            .active-menu-option{
+                color:$white;
+                text-decoration: underline;
+            }
+        }
+        button{
+            grid-column: 3 / 4;
+        }
+    }
+    .menu-appear{
+        background-color: $white !important;
+        button{
+            svg{
+                path{
+                    fill: $main-blue !important;
+                    stroke: $main-blue !important;
+                }
+            }
+        }
+        #menu-nav{
+            a{
+                color:$black-text !important;
+            }
+            .active-menu-option{
+                color: $gray-text !important;
+                text-decoration: underline !important;
+            }
+        }
+    }
+}

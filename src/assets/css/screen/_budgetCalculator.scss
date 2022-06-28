@@ -1,0 +1,217 @@
+.budget-calc-intro{
+    background-image: url('https://amigos.cmsmasters.net/wp-content/uploads/2017/12/make-app-1.jpg');
+}
+.budget-calc-section{
+    padding: 0 6%;
+    h2{
+        padding: 6vh 0;
+    }
+}
+/********** EVENT FORM **********/
+.event-form-wrapper{
+    form{
+        // display: flex;
+        // flex-direction: column;
+        label{
+            display: flex;
+            flex-direction: column;
+            color: $gray-text;
+            font-size: $x-sm-text;
+            font-weight: 600;
+            margin-bottom: 2vh;
+        }
+        input[type=number],input[type=date], select{
+            appearance: none;
+            height: 6vh;
+            margin-top: 2vh;
+            margin-bottom: 4vh;
+            background-color: transparent;
+            border-radius: 0;
+            color: gray;
+            border: 1px solid rgba(128, 128, 128, 0.216);
+            cursor: pointer;
+        }
+        input[type=number],input[type=date]{
+            margin-bottom: 4vh;
+            border: none;
+            border-bottom: 1px solid rgba(128, 128, 128, 0.251);
+        }
+        input[type=date]{
+            text-align: left;
+        }
+        input[type=checkbox]{
+            cursor: pointer;
+            // appearance: none;
+            border: 1px solid rgba(128, 128, 128, 0.272);
+            border-radius: 0;
+        }
+        .additional-services-list{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            margin-top: 2vh;
+            label{
+                width: 50%;
+                display: grid;
+                align-items: center;
+                justify-content: center;
+                grid-template-columns: 15% 85%;
+            }
+        }
+    }
+    .total-budget{
+        padding: 15px 0;
+        padding-left: 16px;
+        background-color: $main-blue;
+        color: $dark-blue;
+        font-weight: bold;
+        margin-top: 4vh;
+    }
+}
+/********** BUDGET BANNER **********/
+.budget-banner{
+    margin-top: 10vh;
+    margin-bottom: 6vh;
+    gap: 6%;
+    height: 50vh;
+    background-image: url('https://amigos.cmsmasters.net/wp-content/uploads/2017/12/make-app-2.jpg');
+    h2{
+        padding: 2% 6%;
+    }
+}
+@media screen and (min-width: 768px) {
+    .budget-calc-intro{
+        position: relative;
+        height: 50vh;
+        gap: 0;
+        h2{
+            font-size: calc($lg-header * 1.6);
+        }
+        div{
+            position: absolute;
+            bottom: 5%;
+        }
+    }
+    /********** BUDGET BANNER **********/
+    .budget-banner{
+        height: 34vh;
+        h2{
+            padding: 2% 4%;
+        }
+        button{
+            width: 25%;
+            padding: 2.5% 0%;
+        }
+    }
+}
+@media screen and (min-width: 1024px){
+    .budget-calc-intro{
+        height: 90vh;
+        padding-top: 0;
+    }
+    .event-form-wrapper{
+        height: 90vh;
+        form{
+            display: grid;
+            grid-template-columns: 50% 50%;
+            grid-template-rows: repeat(4, calc(100%/4));
+            #event-label{
+                grid-column: 1 / 3;
+                grid-row: 1 / 2;
+            }
+            #event-date-label{
+                grid-column: 1 / 2;
+                grid-row: 2 / 3;
+            }
+            #event-people-label{
+                grid-column: 2 / 3;
+                grid-row: 2 / 3;
+            }
+            #event-food-label{
+                grid-column: 1 / 2;
+                grid-row: 3 / 4;
+            }
+            #event-additional-services{
+                grid-column: 1 / 3;
+                grid-row: 4 / 5;
+            }
+            #event-date-label,#event-people-label,#event-food-label{
+                width: 98%;
+            }
+        }
+    }
+    .budget-banner{
+        height: 70vh;
+        padding-top: 0%;
+        h2{
+            font-size: $lg-header;
+        }
+        button{
+            width: 20%;
+            padding: 2% 0;
+        }
+    }
+}
+@media screen and (min-width: 1280px){
+    .budget-calc-intro{
+        height: 80vh;
+    }
+    .budget-calc-section{
+        h2{
+            padding: 12vh 0;
+        }
+    }
+    .event-form-wrapper{
+        padding: 0 10vw;
+    }
+    .budget-banner{
+        height: 80vh;
+        h2{
+            padding: 0 25%;
+        }
+        button{
+            padding: 1.5% 0;
+            width: 16%;
+        }
+    }
+}
+@media screen and (min-width: 1440px){
+    .budget-calc-intro{
+        height: 70vh;
+    }
+    .event-form-wrapper{
+        padding: 0 20vw;
+    }
+    .budget-banner{
+        h2{
+            padding: 0 22%;
+        }
+        button{
+            padding: 1.5% 0;
+            width: 14%;
+        }
+    }
+}
+@media screen and (min-width: 1680px){
+    .budget-calc-intro{
+        height: 60vh;
+    }
+    .budget-calc-section{
+        padding: 0 6%;
+        h2{
+            padding: 10vh 0;
+        }
+    }
+    .event-form-wrapper{
+        padding: 0 24vw;
+    }
+    .budget-banner{
+        height: 65vh;
+        h2{
+            padding: 0 28%;
+        }
+        button{
+            padding: 1.25% 0;
+        }
+    }
+}

@@ -1,0 +1,36 @@
+#root{
+  overflow-x: hidden;
+}
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+      monospace;
+  }
+  
+@import './assets/css/default/variables';
+@import './assets/css/common/tags';
+@import './assets/css/default/header';
+// forms
+@import './assets/css/common/forms';
+// common
+@import './assets/css/common/contactInfo';
+@import './assets/css/common/footer';
+@import './assets/css/common/sections';
+@import './assets/css/common/toTop';
+// screens
+@import './assets/css/screen/home';
+@import './assets/css/screen/services';
+@import './assets/css/screen/budgetCalculator';

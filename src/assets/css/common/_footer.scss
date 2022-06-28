@@ -1,0 +1,55 @@
+/********** FOOTER **********/
+footer{
+    background-color: $white;
+    padding-top: 4vh;
+    width: 100%;
+    margin: 0 auto;
+    border-top: 1px solid rgba(197, 197, 197, 0.504);
+    gap: 4vh;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 5vh;
+    p{
+        text-align: center;
+        color: $gray-text;
+        width: 80%;
+    }
+}
+@media screen and (min-width: 1024px){
+    footer{
+        padding-top: 5vh;
+        p{
+            font-size: $x-sm-text;
+        }
+    }
+}
+@media screen and (min-width: 1280px){
+    footer{
+        padding-top: 5vh;
+        p{
+            font-size: $md-text;
+        }
+    }
+}
+@media screen and (min-width: 1440px){
+    footer{
+        padding-top: 5vh;
+        p{
+            font-size: $x-sm-text;
+        }
+    }
+}
+@media screen and (min-width: 1680px){
+    footer{
+        p{
+            font-size: $sm-text;
+        }
+    }
+}
+@media screen and (min-width: 1920px){
+    footer{
+        p{
+            font-size: $sm-text;
+        }
+    }
+}

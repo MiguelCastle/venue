@@ -1,0 +1,41 @@
+.contact-info{
+    background-color: $white;
+    gap: 6vh;
+    padding: 8vh 6%;
+    li{
+        display: flex;
+        flex-direction: column;
+        gap: 4vh;
+        h5{
+            font-weight: 500;
+        }
+        p{
+            display: flex;
+            flex-direction: column;
+            gap: 1vh;
+            color: $gray-text;
+        }
+    }
+}
+@media screen and (min-width: 768px){
+    .contact-info{
+        flex-direction: row;
+        padding: 8vh 6%;
+    }
+}
+@media screen and (min-width: 1024px){
+    .contact-info{
+        flex-direction: row;
+        gap: 15%;
+        padding: 14vh 3%;
+    }
+}
+
+@media screen and (min-width: 1280px){
+    .contact-info{
+        flex-direction: row;
+        gap: 15%;
+        padding: 14vh 3%;
+       justify-content: center;
+    }
+}

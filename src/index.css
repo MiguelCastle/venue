@@ -1,0 +1,1673 @@
+#root {
+  overflow-x: hidden;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+/********** FONT FAMILY **********/
+@font-face {
+  font-family: "AnticDidone";
+  src: local("AnticDidone"), url("/src/assets/fonts/Antic_Didone/AnticDidone-Regular.ttf") format("truetype");
+  font-weight: normal;
+}
+@font-face {
+  font-family: "Karla";
+  src: local("Karla"), url("/src/assets/fonts/Karla/Karla-VariableFont_wght.ttf") format("truetype");
+  font-weight: normal;
+}
+/***** HEADER FONT *****/
+/***** HEADERS *****/
+header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  background-color: white;
+  z-index: 1;
+}
+header button {
+  position: absolute;
+  height: 30%;
+  width: 15%;
+  right: 10px;
+  bottom: 10px;
+  background-color: transparent;
+  border: none;
+}
+header #menu-nav {
+  position: absolute;
+  background-color: white;
+  width: 100%;
+  top: 100%;
+  padding: 6%;
+  list-style: none;
+  flex-direction: column;
+  gap: 4vh;
+  z-index: 10;
+}
+header #menu-nav a {
+  color: #141414;
+  text-decoration: none;
+}
+header #menu-nav .active-menu-option {
+  color: #575757;
+  text-decoration: underline;
+}
+
+.active-menu {
+  display: flex;
+}
+
+.inactive-menu {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  header {
+    display: grid;
+    grid-template-columns: 80% 20%;
+    grid-template-rows: 6vh;
+    padding: 0.5% 0;
+  }
+  header svg {
+    height: 100% !important;
+  }
+  header button {
+    position: relative;
+    height: 100%;
+    width: 25%;
+    height: 50%;
+    margin-left: 60%;
+    right: initial;
+    bottom: initial;
+  }
+}
+@media screen and (min-width: 1024px) {
+  header button {
+    height: 100%;
+  }
+}
+@media screen and (min-width: 1280px) {
+  header {
+    position: fixed;
+    z-index: 10;
+    width: 100%;
+    background-color: transparent;
+    grid-template-columns: 40% 50% 10%;
+    transition: all 0.25s ease-in;
+  }
+  header button svg {
+    color: white;
+  }
+  header button svg path {
+    fill: white;
+    stroke: white;
+  }
+  header #menu-nav {
+    position: relative;
+    flex-direction: row;
+    align-items: center;
+    justify-content: right;
+    top: 0;
+    padding: 0;
+    height: 100%;
+    width: initial;
+    background: transparent;
+  }
+  header #menu-nav a {
+    color: white;
+  }
+  header #menu-nav .active-menu-option {
+    color: white;
+    text-decoration: underline;
+  }
+  header button {
+    grid-column: 3/4;
+  }
+
+  .menu-appear {
+    background-color: white !important;
+  }
+  .menu-appear button svg path {
+    fill: #96C7C4 !important;
+    stroke: #96C7C4 !important;
+  }
+  .menu-appear #menu-nav a {
+    color: #141414 !important;
+  }
+  .menu-appear #menu-nav .active-menu-option {
+    color: #575757 !important;
+    text-decoration: underline !important;
+  }
+}
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  padding: 0 5%;
+}
+.contact-form p {
+  margin: 1vh;
+}
+.contact-form label {
+  color: #575757;
+}
+.contact-form input[type=text], .contact-form input[type=email] {
+  height: 8vh;
+  border: none;
+  border-bottom: 1px solid rgb(233, 233, 233);
+  border-radius: 0;
+  margin-bottom: 4vh;
+}
+.contact-form textarea {
+  resize: none;
+  border: none;
+  border-bottom: 1px solid rgb(233, 233, 233);
+  border-radius: 0;
+}
+.contact-form input[type=submit] {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  padding: 4% 3%;
+  width: 30%;
+  border: none;
+  background-color: #96C7C4;
+  margin: 4vh 0;
+  border-radius: 0;
+  color: white;
+}
+
+.alert {
+  display: block;
+  border: 1px solid transparent;
+  padding: 1%;
+  border-radius: 2px;
+  margin-top: 10px;
+}
+
+.success {
+  background-color: #D4EDDA;
+  color: #155724;
+  border-color: #C3E6CB;
+}
+
+.alert-danger {
+  background-color: #F8D7DA;
+  color: #721C24;
+  border-color: #f5c6cb;
+}
+
+@media screen and (min-width: 768px) {
+  .contact-form input[type=text], .contact-form input[type=email] {
+    height: 5vh;
+    margin-bottom: 3vh;
+  }
+  .contact-form input[type=submit] {
+    padding: 3% 0%;
+    width: 14%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .contact-form {
+    padding: 0 10%;
+  }
+  .contact-form input[type=text], .contact-form input[type=email] {
+    height: 8vh;
+  }
+  .contact-form input[type=submit] {
+    padding: 2vh 0%;
+    width: 10%;
+    font-weight: bold;
+    font-size: 0.75rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .contact-form {
+    padding: 0 10%;
+  }
+  .contact-form input[type=text], .contact-form input[type=email] {
+    height: 6vh;
+  }
+  .contact-form input[type=submit] {
+    width: 6vw;
+    font-weight: bold;
+    font-size: 0.75rem;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .contact-form {
+    padding: 0 10%;
+  }
+  .contact-form input[type=text], .contact-form input[type=email] {
+    height: 6vh;
+  }
+}
+@media screen and (min-width: 1680px) {
+  .contact-form input[type=text], .contact-form input[type=email] {
+    margin-bottom: 1vh;
+    height: 4vh;
+  }
+  .contact-form input[type=submit] {
+    margin: 0;
+    margin-top: 2vh;
+  }
+}
+.contact-info {
+  background-color: white;
+  gap: 6vh;
+  padding: 8vh 6%;
+}
+.contact-info li {
+  display: flex;
+  flex-direction: column;
+  gap: 4vh;
+}
+.contact-info li h5 {
+  font-weight: 500;
+}
+.contact-info li p {
+  display: flex;
+  flex-direction: column;
+  gap: 1vh;
+  color: #575757;
+}
+
+@media screen and (min-width: 768px) {
+  .contact-info {
+    flex-direction: row;
+    padding: 8vh 6%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .contact-info {
+    flex-direction: row;
+    gap: 15%;
+    padding: 14vh 3%;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .contact-info {
+    flex-direction: row;
+    gap: 15%;
+    padding: 14vh 3%;
+    justify-content: center;
+  }
+}
+/********** FOOTER **********/
+footer {
+  background-color: white;
+  padding-top: 4vh;
+  width: 100%;
+  margin: 0 auto;
+  border-top: 1px solid rgba(197, 197, 197, 0.504);
+  gap: 4vh;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 5vh;
+}
+footer p {
+  text-align: center;
+  color: #575757;
+  width: 80%;
+}
+
+@media screen and (min-width: 1024px) {
+  footer {
+    padding-top: 5vh;
+  }
+  footer p {
+    font-size: 0.75rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  footer {
+    padding-top: 5vh;
+  }
+  footer p {
+    font-size: 0.9375rem;
+  }
+}
+@media screen and (min-width: 1440px) {
+  footer {
+    padding-top: 5vh;
+  }
+  footer p {
+    font-size: 0.75rem;
+  }
+}
+@media screen and (min-width: 1680px) {
+  footer p {
+    font-size: 0.875rem;
+  }
+}
+@media screen and (min-width: 1920px) {
+  footer p {
+    font-size: 0.875rem;
+  }
+}
+.intro {
+  height: 28vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16%;
+  background-color: #96C7C4;
+  background-size: cover;
+  background-position: center;
+}
+.intro h2 {
+  position: relative;
+  color: white;
+  font-family: AnticDidone;
+}
+.intro div {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 1%;
+  font-size: 0.75rem;
+  justify-content: center;
+}
+.intro div p, .intro div span {
+  color: rgb(193, 193, 193);
+}
+.intro div .redirect-p {
+  color: white;
+  text-decoration: none;
+}
+
+.appear {
+  -webkit-animation: appear 1s ease-in forwards;
+          animation: appear 1s ease-in forwards;
+}
+
+@-webkit-keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .intro {
+    height: 100vh;
+    padding-top: 15%;
+  }
+  .intro h2 {
+    font-size: 4.2rem;
+  }
+  .intro div {
+    margin-top: 17%;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .intro {
+    height: 80vh;
+    padding-top: 18%;
+  }
+  .intro div {
+    margin-top: 12%;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .intro {
+    height: 70vh;
+    padding-top: 16%;
+  }
+  .intro h2 {
+    font-size: 5.25rem;
+  }
+  .intro div {
+    margin-top: 10%;
+    font-size: 0.875rem;
+  }
+}
+@media screen and (min-width: 1680px) {
+  .intro div {
+    font-size: 1.125rem;
+  }
+}
+#totop-btn {
+  position: fixed;
+  z-index: 998;
+  bottom: 5vh;
+  right: 10vw;
+  color: #fff;
+  padding: 1%;
+  background: rgba(0, 0, 0, 0.301);
+  border-radius: 50%;
+  width: 10vw;
+  height: 10vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+}
+@media screen and (min-width: 768px) {
+  #totop-btn {
+    width: 5vw;
+    height: 5vw;
+    right: 5vw;
+  }
+}
+@media only screen and (min-width: 992px) {
+  #totop-btn {
+    width: 3vw;
+    height: 3vw;
+    right: 5vw;
+    padding: 0.5%;
+  }
+}
+
+:root {
+  --slide-up-percent-start:80%;
+  --slide-up-percent: 40%;
+}
+
+.lg-header {
+  font-family: AnticDidone;
+  font-size: 2.625rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+/********* BUTTONS *********/
+.lg-btn {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  padding: 6% 0;
+  width: 75%;
+  border: none;
+  font-family: Karla;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.md-btn {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  padding: 6% 0;
+  width: 60%;
+  border: none;
+  font-family: Karla;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.main-blue-btn {
+  color: white;
+  background-color: #96C7C4;
+}
+.main-blue-btn:hover {
+  background-color: white;
+  color: #000;
+  transition: all 0.5s ease-in;
+}
+
+.main-pink-btn {
+  color: white;
+  background-color: #C79699;
+}
+
+/********** FLEX *********/
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+/********** PARRALEX **********/
+#parralax-img {
+  position: fixed;
+  width: 100%;
+  z-index: -1;
+  background-image: url("https://amigos.cmsmasters.net/wp-content/uploads/2018/01/slide2.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+body {
+  background-color: white;
+}
+
+/********** INTRO SECTION **********/
+.intro-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.intro-section h2 {
+  margin-bottom: 16%;
+  color: white;
+}
+
+/********** WELCOME SECTION **********/
+.welcome-section {
+  height: 200vh;
+  background-color: white;
+}
+.welcome-section div:nth-child(1) {
+  height: 50%;
+  display: grid;
+  grid-template-rows: 70% 30%;
+  grid-template-columns: 100%;
+}
+.welcome-section div:nth-child(1) img {
+  position: relative;
+  top: -20%;
+  height: 100%;
+  width: 95%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  margin: 0 auto;
+  z-index: 2;
+}
+.welcome-section div:nth-child(1) section {
+  align-items: center;
+  text-align: center;
+  gap: 12%;
+  padding: 4% 6%;
+}
+.welcome-section div:nth-child(1) section h3 {
+  text-transform: uppercase;
+  font-size: 1.125rem;
+  color: #141414;
+  font-weight: 400;
+  letter-spacing: 0.1rem;
+}
+.welcome-section div:nth-child(1) section p {
+  display: flex;
+  flex-direction: column;
+  gap: 1vh;
+  font-size: 0.9375rem;
+  color: #575757;
+}
+.welcome-section div:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+  height: 50%;
+  align-items: center;
+  gap: 10%;
+  padding: 6%;
+  padding-top: 10%;
+}
+.welcome-section div:nth-child(2) p {
+  color: #C79699;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+}
+.welcome-section div:nth-child(2) img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  width: 100%;
+}
+
+/********** OUR SERVICES **********/
+.our-services {
+  background-color: white;
+}
+.our-services h4 {
+  text-align: center;
+  font-size: 0.5rem;
+  color: #C79699;
+  font-weight: 900;
+  margin-bottom: 5%;
+  letter-spacing: 0.1rem;
+}
+
+.carousel-div h3 {
+  font-size: 1.75rem;
+  font-weight: 500;
+  font-family: AnticDidone;
+  padding-bottom: 10%;
+}
+
+/********** REASONS SECTION **********/
+.reasons-section {
+  padding: 2% 6%;
+  padding-top: 20%;
+  background-color: white;
+}
+.reasons-section h2 {
+  text-align: left;
+  padding-bottom: 20%;
+}
+
+.icon-title-descr {
+  height: 40vh;
+  display: grid;
+  grid-template-rows: 40% 10% 15% 15%;
+  grid-template-columns: 100%;
+  gap: 5%;
+  align-items: center;
+}
+.icon-title-descr svg {
+  height: 100%;
+  width: 25%;
+  padding-right: 10%;
+}
+.icon-title-descr * {
+  font-size: 0.9375rem;
+}
+.icon-title-descr h4 {
+  text-transform: uppercase;
+  color: #141414;
+  font-weight: 500;
+}
+.icon-title-descr p {
+  color: #575757;
+}
+.icon-title-descr button {
+  width: initial;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: none;
+  background-color: transparent;
+  text-decoration: none;
+  color: #C79699;
+  font-weight: 600;
+}
+
+/********* REVIEW SECTION **********/
+.reviews-section {
+  background-color: #e7fffd;
+  padding-top: 8%;
+}
+.reviews-section .svg-present {
+  height: 10vh;
+  padding: 1%;
+  margin-bottom: 5%;
+}
+
+.carousel-review-div {
+  padding: 0 8%;
+  padding-top: 5%;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  gap: 10%;
+}
+.carousel-review-div h3 {
+  font-family: AnticDidone;
+  font-size: 1.75rem;
+  font-weight: 500;
+  text-align: center;
+  color: #518a87;
+}
+.carousel-review-div p {
+  font-size: 0.9375rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+}
+.carousel-review-div p span {
+  font-size: 0.75rem;
+  color: #575757;
+  letter-spacing: 0.1rem;
+  font-weight: bold;
+}
+
+/********** CONTACT SECTION **********/
+.contact-section {
+  background-color: white;
+}
+.contact-section div:nth-child(1) {
+  position: relative;
+  background-image: url("./assets/images/2.jpeg");
+  background-position: center;
+  background-size: cover;
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  gap: 5vh;
+  align-items: center;
+  justify-content: center;
+}
+.contact-section div:nth-child(1)::after {
+  position: absolute;
+  content: " ";
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.401);
+  z-index: 1;
+}
+.contact-section div:nth-child(1) h2 {
+  color: #fff;
+  z-index: 2;
+}
+.contact-section div:nth-child(1) p {
+  color: #96C7C4;
+  text-transform: uppercase;
+  z-index: 2;
+}
+.contact-section div:nth-child(2) h2 {
+  padding: 10%;
+}
+
+/********** MEDIA QUIERES **********/
+@media screen and (min-width: 768px) {
+  :root {
+    --slide-up-percent-start:50%;
+    --slide-up-percent: 20%;
+  }
+
+  /********* BUTTONS *********/
+  .lg-btn {
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+    padding: 3% 0;
+    width: 30%;
+    font-size: 0.875rem;
+  }
+
+  /********* INTRO SECTION *********/
+  .intro-section {
+    height: 60vh !important;
+  }
+  .intro-section h2 {
+    font-size: 3.4rem;
+    padding: 0 10%;
+  }
+
+  /********** WELCOME SECTION **********/
+  .welcome-section {
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+  }
+  .welcome-section div:nth-child(1) {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 100%;
+  }
+  .welcome-section div:nth-child(1) img {
+    position: relative;
+    top: -12%;
+    height: 100%;
+  }
+  .welcome-section div:nth-child(1) section {
+    height: 50%;
+    gap: 25%;
+    padding-top: 20%;
+  }
+  .welcome-section div:nth-child(2) {
+    width: 50%;
+    height: 100%;
+    gap: 6%;
+    padding: 6% 2%;
+  }
+  .welcome-section div:nth-child(2) img {
+    margin-top: 10%;
+  }
+
+  /********** OUR SERVICES **********/
+  .our-services {
+    padding-top: 8%;
+  }
+  .our-services h4 {
+    font-size: 0.75rem;
+    font-weight: 700;
+    margin-bottom: 3%;
+    letter-spacing: 0.03rem;
+  }
+
+  .carousel-div h3 {
+    font-size: 2rem;
+  }
+
+  /********** REASONS SECTION **********/
+  .reasons-section h2 {
+    line-height: 4rem;
+    padding-top: 10%;
+    padding-bottom: 10%;
+    padding-right: 40%;
+  }
+
+  .reasons-list {
+    display: flex;
+    flex-direction: row;
+    gap: 4%;
+  }
+
+  .icon-title-descr {
+    width: 33.3333333333%;
+  }
+  .icon-title-descr svg {
+    width: 35%;
+    margin: 0 auto;
+    padding-right: 0%;
+  }
+  .icon-title-descr * {
+    text-align: center;
+  }
+
+  /********* REVIEW SECTION **********/
+  .reviews-section {
+    padding-top: 4%;
+  }
+  .reviews-section .svg-present {
+    height: 8vh;
+    margin-bottom: 4%;
+  }
+
+  .carousel-review-div {
+    height: 46vh;
+    padding: 0 20%;
+  }
+
+  /********** CONTACT SECTION **********/
+  .contact-section {
+    flex-direction: row;
+    padding-top: 10%;
+    height: 90vh;
+  }
+  .contact-section div:nth-child(1) {
+    height: 100%;
+    width: 50%;
+  }
+  .contact-section div:nth-child(2) {
+    height: 100%;
+    width: 50%;
+    padding-top: 0%;
+  }
+  .contact-section div:nth-child(2) h2 {
+    padding: 4% 8%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  :root {
+    --slide-up-percent-start:50%;
+    --slide-up-percent: 26%;
+  }
+
+  .md-btn {
+    letter-spacing: 0.03rem;
+    padding: 4% 0;
+    width: 40%;
+  }
+
+  /********** INTRO **********/
+  .intro-section {
+    height: 125vh !important;
+  }
+  .intro-section h2 {
+    margin-bottom: 4%;
+    padding: 0 20%;
+  }
+
+  /********* BUTTONS *********/
+  .lg-btn {
+    padding: 2.25% 0;
+    width: 24%;
+    font-size: 0.875rem;
+    letter-spacing: 0.08rem;
+  }
+
+  /********** WELCOME SECTION **********/
+  .welcome-section {
+    height: 160vh;
+  }
+  .welcome-section div:nth-child(1) section {
+    gap: 18%;
+    padding-top: 0%;
+  }
+
+  /********** OUR SERVICES **********/
+  .our-services h4 {
+    font-size: 0.75rem;
+    font-weight: 700;
+    margin-bottom: 5%;
+    letter-spacing: 0.1rem;
+  }
+
+  .carousel-div h3 {
+    font-size: 2.625rem;
+    padding-bottom: 5%;
+  }
+  .carousel-div img {
+    padding: 0 3%;
+  }
+
+  /********* REVIEW SECTION **********/
+  .reviews-section {
+    padding-top: 4%;
+  }
+  .reviews-section .svg-present {
+    height: 14vh;
+  }
+
+  .carousel-review-div {
+    height: 60vh;
+  }
+
+  /********** CONTACT SECTION **********/
+  .contact-section {
+    padding-top: 0%;
+    height: 125vh;
+  }
+  .contact-section div:nth-child(2) h2 {
+    padding: 6% 8%;
+    padding-bottom: 8%;
+  }
+
+  .contact-info {
+    flex-direction: row;
+    gap: 15%;
+    padding: 14vh 3%;
+  }
+}
+@media screen and (min-width: 1280px) {
+  :root {
+    --slide-up-percent-start:30%;
+    --slide-up-percent: 24%;
+  }
+
+  /********* INTRO SECTION *********/
+  .intro-section h2 {
+    font-size: 3.9375rem;
+    padding: 0 20%;
+  }
+
+  /********* BUTTONS *********/
+  .lg-btn {
+    padding: 1.5vw 0;
+    width: 18vw;
+    font-size: 0.875rem;
+    letter-spacing: 0.08rem;
+  }
+
+  .welcome-section {
+    height: 150vh;
+    padding: 0 12%;
+  }
+  .welcome-section div:nth-child(1) img {
+    top: -10%;
+  }
+  .welcome-section div:nth-child(1) section {
+    padding: 0;
+  }
+  .welcome-section div:nth-child(2) h2 {
+    padding-top: 25%;
+  }
+
+  .carousel-div img {
+    padding: 0 12%;
+  }
+
+  .reasons-section {
+    padding: 0 12%;
+    padding-top: 0;
+    padding-bottom: 8%;
+  }
+  .reasons-section h2 {
+    padding-right: 55%;
+    padding-top: 12%;
+  }
+
+  .icon-title-descr svg {
+    padding: 8%;
+  }
+
+  /********* REVIEW SECTION **********/
+  .reviews-section .svg-present {
+    height: 12vh;
+  }
+
+  /********** CONTACT SECTION **********/
+  .contact-section {
+    height: 135vh;
+  }
+  .contact-section div:nth-child(1) h2 {
+    padding: 0 28%;
+  }
+  .contact-section div:nth-child(2) {
+    padding-top: 5%;
+  }
+  .contact-section div:nth-child(2) h2 {
+    padding: 6% 8%;
+    padding-bottom: 8%;
+  }
+}
+@media screen and (min-width: 1440px) {
+  :root {
+    --slide-up-percent-start:30%;
+    --slide-up-percent: 22%;
+  }
+
+  /********* INTRO *********/
+  .intro-section {
+    height: 110vh !important;
+  }
+  .intro-section h2 {
+    padding: 0 25%;
+    transform: scale(1.2);
+  }
+
+  /********* BUTTONS *********/
+  .lg-btn {
+    padding: 1.5% 0;
+    width: 16%;
+  }
+
+  .welcome-section div:nth-child(1) img {
+    top: -8%;
+  }
+
+  .reasons-section h2 {
+    padding-right: 48%;
+  }
+
+  .icon-title-descr button {
+    font-size: 0.75rem;
+  }
+
+  /********* REVIEW SECTION **********/
+  .reviews-section .svg-present {
+    height: 11vh;
+    margin-bottom: 2%;
+  }
+
+  .carousel-review-div {
+    height: 50vh;
+  }
+
+  /********** CONTACT SECTION **********/
+  .contact-section {
+    padding: 0%;
+    height: 90vh;
+  }
+  .contact-section div:nth-child(1) h2 {
+    padding: 0 25%;
+    transform: scale(1.1);
+  }
+  .contact-section div:nth-child(2) {
+    padding-top: 0%;
+  }
+  .contact-section div:nth-child(2) h2 {
+    padding-bottom: 4%;
+  }
+}
+@media screen and (min-width: 1680px) {
+  :root {
+    --slide-up-percent-start:30%;
+    --slide-up-percent: 20%;
+  }
+
+  /********* INTRO SECTION *********/
+  .intro-section {
+    padding-top: 20%;
+    height: 90vh !important;
+  }
+  .intro-section h2 {
+    padding: 0 28%;
+    transform: scale(1.2);
+  }
+
+  /********* BUTTONS *********/
+  .lg-btn {
+    padding: 1.25% 0;
+    width: 14%;
+    font-size: 0.875rem;
+    letter-spacing: 0.08rem;
+  }
+
+  /********* WELCOME SECTION  *********/
+  .welcome-section {
+    gap: 8%;
+    height: 100vh;
+    padding: 0 12%;
+  }
+  .welcome-section div:nth-child(1) img {
+    top: -6%;
+  }
+  .welcome-section div:nth-child(1) section {
+    gap: 10%;
+  }
+  .welcome-section div:nth-child(2) {
+    padding: 0 6%;
+  }
+
+  /********** OUR SERVICES **********/
+  .our-services {
+    padding-top: 4%;
+    height: 90vh;
+  }
+  .our-services h4 {
+    margin-bottom: 2%;
+  }
+
+  .carousel-div {
+    height: initial;
+  }
+  .carousel-div h3 {
+    font-size: 2rem;
+    padding-bottom: 2%;
+  }
+  .carousel-div img {
+    height: initial !important;
+    width: initial !important;
+  }
+
+  /********** REASONS SECTION **********/
+  .reasons-section h2 {
+    padding: 2% 0;
+    padding-right: 55%;
+  }
+
+  .icon-title-descr {
+    gap: 1%;
+  }
+
+  /********* REVIEW SECTION **********/
+  .reviews-section .svg-present {
+    height: 10vh;
+  }
+
+  .carousel-review-div {
+    height: 40vh;
+  }
+
+  /********** CONTACT SECTION **********/
+  .contact-section {
+    height: 80vh;
+  }
+  .contact-section div:nth-child(1) h2 {
+    transform: none;
+    padding: 0 20%;
+  }
+  .contact-section div:nth-child(2) {
+    padding-top: 0%;
+  }
+  .contact-section div:nth-child(2) h2 {
+    padding-bottom: 5%;
+  }
+}
+@media screen and (min-width: 1920px) {
+  :root {
+    --slide-up-percent-start:30%;
+    --slide-up-percent: 16%;
+  }
+
+  /********* INTRO SECTION *********/
+  .intro-section {
+    padding-top: 16%;
+    height: 90vh !important;
+  }
+  .intro-section h2 {
+    padding: 0 34%;
+    transform: scale(1.2);
+  }
+
+  /********* BUTTONS *********/
+  .lg-btn {
+    padding: 1% 0;
+    width: 12%;
+  }
+
+  /********* WELCOME SECTION  *********/
+  .welcome-section {
+    padding: 0 20%;
+  }
+
+  /********* OUR SERVICES SECTION  *********/
+  .carousel-div {
+    height: initial;
+  }
+  .carousel-div h3 {
+    font-size: 2.8rem;
+  }
+
+  /********** REASONS SECTION **********/
+  .reasons-section {
+    padding: 0 20%;
+  }
+  .reasons-section h2 {
+    padding-right: 50%;
+  }
+
+  .icon-title-descr {
+    gap: 1%;
+  }
+  .icon-title-descr * {
+    text-align: left;
+  }
+  .icon-title-descr svg {
+    margin: 0;
+  }
+
+  /********** CONTACT SECTION **********/
+  .contact-section {
+    height: 70vh;
+  }
+  .contact-section div:nth-child(2) {
+    padding: 0 4%;
+  }
+  .contact-section div:nth-child(2) h2 {
+    padding-bottom: 10%;
+  }
+}
+.appear-up {
+  -webkit-animation: appear-up 1s ease-in forwards;
+          animation: appear-up 1s ease-in forwards;
+}
+
+@-webkit-keyframes appear-up {
+  from {
+    padding-top: var(--slide-up-percent-start);
+  }
+  to {
+    padding-top: var(--slide-up-percent);
+  }
+}
+
+@keyframes appear-up {
+  from {
+    padding-top: var(--slide-up-percent-start);
+  }
+  to {
+    padding-top: var(--slide-up-percent);
+  }
+}
+.service-intro {
+  background-image: url("https://amigos.cmsmasters.net/wp-content/uploads/2018/02/background.jpg");
+}
+
+/******** PHOTO IMAGE LIST **********/
+.image-service-list {
+  display: flex;
+  flex-direction: column;
+}
+.image-service-list li {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  max-height: 40vh;
+}
+.image-service-list li .image-title-filter {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.417);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+}
+.image-service-list li .image-title-filter span {
+  text-transform: uppercase;
+}
+.image-service-list li .image-title-filter:hover {
+  opacity: 1;
+  transition: all 0.25s ease-in;
+}
+.image-service-list li img {
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+}
+
+/******** CONTACT **********/
+.service-contact {
+  padding-top: 12%;
+}
+.service-contact h2:nth-child(2) {
+  margin-bottom: 20%;
+}
+
+@media screen and (min-width: 768px) {
+  .image-service-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .image-service-list li {
+    max-height: 40vh;
+    width: 50vw;
+  }
+
+  .service-contact {
+    padding: 0 1%;
+    padding-top: 8%;
+  }
+  .service-contact h2:nth-child(2) {
+    margin-bottom: 12%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .image-service-list {
+    height: 130vh;
+    width: 100vw;
+    display: grid;
+    flex-wrap: initial;
+    grid-template-columns: repeat(4, 25%);
+    grid-template-rows: repeat(4, 25%);
+  }
+  .image-service-list li {
+    max-height: 100%;
+    width: 100%;
+  }
+  .image-service-list li p span {
+    letter-spacing: 0.1rem;
+  }
+  .image-service-list li:nth-child(1) {
+    grid-column: 1/2;
+    grid-row: 1/2;
+  }
+  .image-service-list li:nth-child(2) {
+    grid-column: 2/3;
+    grid-row: 1/2;
+  }
+  .image-service-list li:nth-child(3) {
+    grid-column: 3/5;
+    grid-row: 1/3;
+  }
+  .image-service-list li:nth-child(4) {
+    grid-column: 1/3;
+    grid-row: 2/4;
+  }
+  .image-service-list li:nth-child(5) {
+    grid-column: 3/5;
+    grid-row: 3/4;
+  }
+  .image-service-list li:nth-child(6) {
+    grid-column: 1/3;
+    grid-row: 4/5;
+  }
+  .image-service-list li:nth-child(7) {
+    grid-column: 3/4;
+    grid-row: 4/5;
+  }
+  .image-service-list li:nth-child(8) {
+    grid-column: 4/5;
+    grid-row: 4/5;
+  }
+
+  .service-contact {
+    padding-left: 8%;
+    padding-right: 8%;
+  }
+  .service-contact h2:nth-child(2) {
+    margin-bottom: 8%;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .service-contact {
+    padding-left: 18%;
+    padding-right: 18%;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .service-contact {
+    padding-left: 22%;
+    padding-right: 22%;
+  }
+
+  .image-service-list .image-title-filter {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (min-width: 1680px) {
+  .service-contact {
+    padding-left: 24%;
+    padding-right: 24%;
+  }
+}
+.budget-calc-intro {
+  background-image: url("https://amigos.cmsmasters.net/wp-content/uploads/2017/12/make-app-1.jpg");
+}
+
+.budget-calc-section {
+  padding: 0 6%;
+}
+.budget-calc-section h2 {
+  padding: 6vh 0;
+}
+
+/********** EVENT FORM **********/
+.event-form-wrapper form label {
+  display: flex;
+  flex-direction: column;
+  color: #575757;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-bottom: 2vh;
+}
+.event-form-wrapper form input[type=number], .event-form-wrapper form input[type=date], .event-form-wrapper form select {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  height: 6vh;
+  margin-top: 2vh;
+  margin-bottom: 4vh;
+  background-color: transparent;
+  border-radius: 0;
+  color: gray;
+  border: 1px solid rgba(128, 128, 128, 0.216);
+  cursor: pointer;
+}
+.event-form-wrapper form input[type=number], .event-form-wrapper form input[type=date] {
+  margin-bottom: 4vh;
+  border: none;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.251);
+}
+.event-form-wrapper form input[type=date] {
+  text-align: left;
+}
+.event-form-wrapper form input[type=checkbox] {
+  cursor: pointer;
+  border: 1px solid rgba(128, 128, 128, 0.272);
+  border-radius: 0;
+}
+.event-form-wrapper form .additional-services-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 2vh;
+}
+.event-form-wrapper form .additional-services-list label {
+  width: 50%;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  grid-template-columns: 15% 85%;
+}
+.event-form-wrapper .total-budget {
+  padding: 15px 0;
+  padding-left: 16px;
+  background-color: #96C7C4;
+  color: #518a87;
+  font-weight: bold;
+  margin-top: 4vh;
+}
+
+/********** BUDGET BANNER **********/
+.budget-banner {
+  margin-top: 10vh;
+  margin-bottom: 6vh;
+  gap: 6%;
+  height: 50vh;
+  background-image: url("https://amigos.cmsmasters.net/wp-content/uploads/2017/12/make-app-2.jpg");
+}
+.budget-banner h2 {
+  padding: 2% 6%;
+}
+
+@media screen and (min-width: 768px) {
+  .budget-calc-intro {
+    position: relative;
+    height: 50vh;
+    gap: 0;
+  }
+  .budget-calc-intro h2 {
+    font-size: 4.2rem;
+  }
+  .budget-calc-intro div {
+    position: absolute;
+    bottom: 5%;
+  }
+
+  /********** BUDGET BANNER **********/
+  .budget-banner {
+    height: 34vh;
+  }
+  .budget-banner h2 {
+    padding: 2% 4%;
+  }
+  .budget-banner button {
+    width: 25%;
+    padding: 2.5% 0%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .budget-calc-intro {
+    height: 90vh;
+    padding-top: 0;
+  }
+
+  .event-form-wrapper {
+    height: 90vh;
+  }
+  .event-form-wrapper form {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: repeat(4, 25%);
+  }
+  .event-form-wrapper form #event-label {
+    grid-column: 1/3;
+    grid-row: 1/2;
+  }
+  .event-form-wrapper form #event-date-label {
+    grid-column: 1/2;
+    grid-row: 2/3;
+  }
+  .event-form-wrapper form #event-people-label {
+    grid-column: 2/3;
+    grid-row: 2/3;
+  }
+  .event-form-wrapper form #event-food-label {
+    grid-column: 1/2;
+    grid-row: 3/4;
+  }
+  .event-form-wrapper form #event-additional-services {
+    grid-column: 1/3;
+    grid-row: 4/5;
+  }
+  .event-form-wrapper form #event-date-label, .event-form-wrapper form #event-people-label, .event-form-wrapper form #event-food-label {
+    width: 98%;
+  }
+
+  .budget-banner {
+    height: 70vh;
+    padding-top: 0%;
+  }
+  .budget-banner h2 {
+    font-size: 2.625rem;
+  }
+  .budget-banner button {
+    width: 20%;
+    padding: 2% 0;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .budget-calc-intro {
+    height: 80vh;
+  }
+
+  .budget-calc-section h2 {
+    padding: 12vh 0;
+  }
+
+  .event-form-wrapper {
+    padding: 0 10vw;
+  }
+
+  .budget-banner {
+    height: 80vh;
+  }
+  .budget-banner h2 {
+    padding: 0 25%;
+  }
+  .budget-banner button {
+    padding: 1.5% 0;
+    width: 16%;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .budget-calc-intro {
+    height: 70vh;
+  }
+
+  .event-form-wrapper {
+    padding: 0 20vw;
+  }
+
+  .budget-banner h2 {
+    padding: 0 22%;
+  }
+  .budget-banner button {
+    padding: 1.5% 0;
+    width: 14%;
+  }
+}
+@media screen and (min-width: 1680px) {
+  .budget-calc-intro {
+    height: 60vh;
+  }
+
+  .budget-calc-section {
+    padding: 0 6%;
+  }
+  .budget-calc-section h2 {
+    padding: 10vh 0;
+  }
+
+  .event-form-wrapper {
+    padding: 0 24vw;
+  }
+
+  .budget-banner {
+    height: 65vh;
+  }
+  .budget-banner h2 {
+    padding: 0 28%;
+  }
+  .budget-banner button {
+    padding: 1.25% 0;
+  }
+}/*# sourceMappingURL=index.css.map */

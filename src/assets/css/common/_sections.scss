@@ -1,0 +1,85 @@
+.intro{
+    height: 28vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16%;
+    background-color: $main-blue;
+    background-size: cover;
+    background-position: center;
+    h2{
+        position: relative;
+        color: $white;
+        font-family: $lg-header-font;
+    }
+    div{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        gap: 1%;
+        font-size: $x-sm-text;
+        justify-content: center;
+        p, span{
+            color: rgb(193, 193, 193);
+        }
+        .redirect-p{
+            color: $white;
+            text-decoration: none;
+        }
+    }
+}
+
+.appear{
+    animation: appear 1s ease-in forwards;
+}
+
+@keyframes appear{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+@media screen and (min-width: 1024px){
+    .intro{
+        height: 100vh;
+        padding-top: 15%;
+        h2{
+            font-size: calc($lg-header * 1.6);
+        }
+        div{
+            margin-top: 17%;
+        }
+    }
+}
+@media screen and (min-width: 1280px){
+    .intro{
+        height: 80vh;
+        padding-top: 18%;
+        div{
+            margin-top: 12%;
+        }
+    }
+}
+@media screen and (min-width: 1440px){
+    .intro{
+        height: 70vh;
+        padding-top: 16%;
+        h2{
+            font-size: calc($lg-header * 2);
+        }
+        div{
+            margin-top: 10%;
+            font-size: $sm-text;
+        }
+    }
+}
+@media screen and (min-width: 1680px){
+    .intro{
+        div{
+            font-size: calc($md-text*1.2);
+        }
+    }
+}
