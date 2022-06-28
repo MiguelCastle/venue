@@ -1,12 +1,6 @@
 import React, {useState, useEffect, Suspense} from 'react';
 import { useNavigate } from "react-router-dom";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import { Carousel } from 'react-responsive-carousel';
-// SVGS
-import { ReactComponent as Balloons } from '../../../assets/svgs/balloons.svg';
-import { ReactComponent as Oven } from '../../../assets/svgs/kitchen-cooker.svg';
-import { ReactComponent as Mic } from '../../../assets/svgs/microphone.svg';
-import { ReactComponent as Present } from '../../../assets/svgs/present.svg';
 // photos
 import Header from '../../common/header/Header';
 import Footer from '../../common/footer/Footer';
@@ -55,8 +49,6 @@ const Home = () => {
 
     return (
         <div id="header-trigger">
-        {/* {console.log(width)}
-        {console.log(height)} */}
         <div id="parralax-img" style={{height: window.innerHeight*1.5}}></div>
         <Header index={0}/>
         <main>

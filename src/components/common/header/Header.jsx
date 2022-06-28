@@ -25,7 +25,7 @@ const Header = ({index}) => {
                         start: "top+=10 top",
                         endTrigger:"footer",
                         end:"bottom top",
-                        markers: true,
+                        // markers: true,
                         toggleClass: {targets: headerRef.current, className: "menu-appear"}
                     },
                 }
