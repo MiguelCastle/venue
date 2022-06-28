@@ -12,7 +12,7 @@ const WelcomeSection = () => {
     return (
         <div className='welcome-section'>
             <div>
-                <img src={'https://amigos.cmsmasters.net/wp-content/uploads/2017/12/home-2.png'} alt="decorative tables" />
+                <img src={'https://daycareseattle.s3.amazonaws.com/2.webp'} alt="decorative tables" />
                 <section className="flex-col">
                     <h3>
                         get your event covered

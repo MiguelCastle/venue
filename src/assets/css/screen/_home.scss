@@ -53,9 +53,16 @@
     // height: 100%;
     width: 100%;
     z-index: -1;
-    background-image: url('https://amigos.cmsmasters.net/wp-content/uploads/2018/01/slide2.jpg');
+    background-image: url('https://daycareseattle.s3.amazonaws.com/outdoors.webp');
     background-position: center;
     background-size: cover;
+    &::after{
+        content: ' ';
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
 }
 body{
     background-color: $white;
@@ -238,7 +245,7 @@ body{
     background-color: $white;
     div:nth-child(1){
         position: relative;
-        background-image: url('./assets/images/2.jpeg');
+        background-image: url('https://daycareseattle.s3.amazonaws.com/8.webp');
         background-position: center;
         background-size: cover;
         height: 70vh;

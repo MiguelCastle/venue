@@ -13,19 +13,19 @@ const OurServices = () => {
             >
                 <div className="carousel-div">
                     <h3>Graduations</h3>
-                    <img loading="lazy" src={'https://amigos.cmsmasters.net/wp-content/uploads/2018/01/home-4.jpg'} alt="social meetings"/>
+                    <img loading="lazy" src={'https://daycareseattle.s3.amazonaws.com/4.webp'} alt="social meetings"/>
                 </div>
                 <div className="carousel-div">
                     <h3>Bachelor Party</h3>
-                    <img loading="lazy" src={'https://amigos.cmsmasters.net/wp-content/uploads/2018/01/home-5.jpg'} alt="quinceneras"/>
+                    <img loading="lazy" src={'https://daycareseattle.s3.amazonaws.com/6.webp'} alt="quinceneras"/>
                 </div>
                 <div className="carousel-div">
                     <h3>Social Meetings</h3>
-                    <img loading="lazy" src={'https://amigos.cmsmasters.net/wp-content/uploads/2018/01/home-6-1.jpg'} alt="graduations"/>
+                    <img loading="lazy" src={'https://daycareseattle.s3.amazonaws.com/5.webp'} alt="graduations"/>
                 </div>
                 <div className="carousel-div">
                     <h3>Conference & Awards</h3>
-                    <img loading="lazy" src={'https://amigos.cmsmasters.net/wp-content/uploads/2018/01/home-6.jpg'} alt="graduations"/>
+                    <img loading="lazy" src={'https://daycareseattle.s3.amazonaws.com/7.webp'} alt="graduations"/>
                 </div>
             </Carousel>
         </section>
